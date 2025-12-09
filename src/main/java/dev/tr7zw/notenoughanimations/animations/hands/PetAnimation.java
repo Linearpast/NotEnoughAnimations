@@ -10,11 +10,7 @@ import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.Mth;
-//#if MC > 11904
-import net.minecraft.util.RandomSource;
-//#else
 import java.util.Random;
-//#endif
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.HumanoidArm;
@@ -91,20 +87,18 @@ public class PetAnimation extends BasicAnimation {
             float tickCounter) {
         if (Math.random() < 0.005) {
             for (int i = 0; i < 7; ++i) {
-                //#if MC > 11904
-                RandomSource random = targetPet.getRandom();
+                Random random = new Random(System.currentTimeMillis());
                 double d0 = random.nextGaussian() * 0.02;
                 double d1 = random.nextGaussian() * 0.02;
                 double d2 = random.nextGaussian() * 0.02;
-                targetPet.level().addParticle(ParticleTypes.HEART, targetPet.getRandomX(1.0F), targetPet.getRandomY() + 0.5,
-                        targetPet.getRandomZ(1.0F), d0, d1, d2);
+                double x = targetPet.getX(((double) 2.0F * random.nextDouble() - (double) 1.0F));
+                double y = targetPet.getX(((double) 2.0F * random.nextDouble() - (double) 1.0F));
+                //#if MC > 11904
+                targetPet.level().addParticle(ParticleTypes.HEART,
+                        x, targetPet.getY(random.nextDouble()) + 0.5, y,
+                        d0, d1, d2
+                );
                 //#else
-                //$$Random random = new Random(System.currentTimeMillis());
-                //$$double d0 = random.nextGaussian() * 0.02;
-                //$$double d1 = random.nextGaussian() * 0.02;
-                //$$double d2 = random.nextGaussian() * 0.02;
-                //$$double x = targetPet.getX(((double) 2.0F * random.nextDouble() - (double) 1.0F));
-                //$$double y = targetPet.getX(((double) 2.0F * random.nextDouble() - (double) 1.0F));
                 //$$targetPet.level.addParticle(ParticleTypes.HEART,
                 //$$        x, targetPet.getY(random.nextDouble()) + 0.5, y,
                 //$$        d0, d1, d2
