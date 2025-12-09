@@ -1,13 +1,13 @@
 package dev.tr7zw.notenoughanimations.versionless.config;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-
 import dev.tr7zw.notenoughanimations.versionless.RotationLock;
 import dev.tr7zw.notenoughanimations.versionless.animations.BowAnimation;
 import dev.tr7zw.notenoughanimations.versionless.animations.HoldUpModes;
 import dev.tr7zw.notenoughanimations.versionless.animations.HoldUpTarget;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Config {
 
@@ -54,7 +54,7 @@ public class Config {
     public boolean petAnimation = true;
     public boolean fallingAnimation = false;
     public boolean freezingAnimation = true;
-    public boolean huggingAnimation = false;
+    public boolean huggingAnimation = true;
     public boolean narutoRunning = false;
     public boolean disableLegSmoothing = false;
     public BowAnimation bowAnimation = BowAnimation.VANILLA;

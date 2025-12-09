@@ -36,9 +36,7 @@ public class HugAnimation extends BasicAnimation {
         if (entHit != null && (entHit.getEntity().getType() == EntityType.PLAYER)) {
             AbstractClientPlayer otherPlayer = (AbstractClientPlayer) entHit.getEntity();
             double dif = otherPlayer.getY() - entity.getY();
-            if (otherPlayer.isCrouching() && Math.abs(dif) < 0.3) { // Making sure they are about on the same height
-                return true;
-            }
+            return Math.abs(dif) < 0.3 && PetAnimation.pPetPValid(entity, otherPlayer) == 0.0f;
         }
         return false;
     }
