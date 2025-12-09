@@ -10,7 +10,7 @@ import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.Mth;
-//#if MC > 11802
+//#if MC > 11904
 import net.minecraft.util.RandomSource;
 //#else
 import java.util.Random;
@@ -91,7 +91,7 @@ public class PetAnimation extends BasicAnimation {
             float tickCounter) {
         if (Math.random() < 0.005) {
             for (int i = 0; i < 7; ++i) {
-                //#if MC > 11802
+                //#if MC > 11904
                 RandomSource random = targetPet.getRandom();
                 double d0 = random.nextGaussian() * 0.02;
                 double d1 = random.nextGaussian() * 0.02;
