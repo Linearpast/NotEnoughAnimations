@@ -12,6 +12,8 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.Mth;
 //#if MC > 11802
 import net.minecraft.util.RandomSource;
+//#else
+import java.util.Random;
 //#endif
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
